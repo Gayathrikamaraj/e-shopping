@@ -14,6 +14,20 @@
 	</properties>
 
 	<dependencies>
+
+         <!-- linking backend project -->
+         <dependency>
+         
+         <groupId>sai.com</groupId>
+	<artifactId>backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+         
+         
+         
+         </dependency>
+
+
+
 		<!-- java ee api -->
 		<dependency>
 			<groupId>javax</groupId>

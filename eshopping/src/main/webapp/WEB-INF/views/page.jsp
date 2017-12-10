@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-     <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css"></spring:url>
 <spring:url var="js" value="/resources/js"></spring:url>
 <spring:url var="image" value="/resources/image"></spring:url>
-    <c:set var="contextRoot" value="${pageContext.request.contextPath }" />
-    
+<c:set var="contextRoot" value="${pageContext.request.contextPath }" />
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,19 +50,24 @@
 			<c:if test="${userClickHome== true }">
 				<%@include file="home.jsp"%>
 			</c:if>
-		 	
+
 		</div>
-		
+
 		<!-- when user click about -->
-			<c:if test="${userClickAbout== true }">
-				<%@include file="about.jsp"%>
-			</c:if>
+		<c:if test="${userClickAbout== true }">
+			<%@include file="about.jsp"%>
+		</c:if>
 
+		<!-- Load only when user clicks contact -->
+		<c:if
+			test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+			<%@include file="listProducts.jsp"%>
+		</c:if>
 
-			<!-- when user click contact -->
-			<c:if test="${userClickContact== true }">
-				<%@include file="contact.jsp"%>
-			</c:if>
+		<!-- when user click contact -->
+		<c:if test="${userClickContact== true }">
+			<%@include file="contact.jsp"%>
+		</c:if>
 
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
@@ -78,4 +83,3 @@
 </body>
 
 </html>
-    
